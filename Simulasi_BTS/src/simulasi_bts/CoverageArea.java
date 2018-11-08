@@ -7,16 +7,8 @@ package simulasi_bts;
 
 /**
  *
- * @author Acer
+ * @author Hp
  */
-public class Simulasi_BTS {
-
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String[] args) {
-        // TODO code application logic here
-   
-    }
+public class CoverageArea {
     
 }
