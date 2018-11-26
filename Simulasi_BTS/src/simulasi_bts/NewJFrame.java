@@ -5,17 +5,51 @@
  */
 package simulasi_bts;
 
+import java.util.ArrayList;
+import javax.swing.table.DefaultTableModel;
+
 /**
  *
  * @author Acer
  */
 public class NewJFrame extends javax.swing.JFrame {
-
+ArrayList<Lokasi> listData = new ArrayList<Lokasi>();
+DefaultTableModel tabelModel;
     /**
      * Creates new form NewJFrame
      */
     public NewJFrame() {
         initComponents();
+        tampilData();
+        
+    }
+    public void tampilData(){
+        String[] kolom ={"Lokasi Kampung", "Luas Kampung"};
+        Object [][] objData = new Object[listData.size()][3];
+        
+        int i=0;
+        for(Lokasi n : listData){
+            String[] arrData = {n.getLokasiKampung(), String.valueOf(n.getLuasKampung())};
+            objData[i] = arrData;
+            i++;
+        }
+    DefaultTableModel tebelModel = new DefaultTableModel(objData, kolom){
+        @Override
+        public boolean isCellEditable(int rowIndex, int colIndex){
+            return false;
+        }
+    };
+    
+    
+    }
+    public void isiData(String lokasiKampung, double luasKampung){
+        Lokasi ed = new Lokasi(lokasiKampung,luasKampung);
+        listData.add(ed);
+    }
+    private void resetInputan(){
+        lokasiKampung.setText("");
+        luasKampung.setText("");
+        luasKampung.requestFocus();
     }
 
     /**
@@ -251,30 +285,42 @@ public class NewJFrame extends javax.swing.JFrame {
 
     private void sinyalBTSActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sinyalBTSActionPerformed
         // TODO add your handling code here:
+        sinyalBTS.setText(null);
     }//GEN-LAST:event_sinyalBTSActionPerformed
 
     private void hapusButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_hapusButtonActionPerformed
         // TODO add your handling code here:
+        
     }//GEN-LAST:event_hapusButtonActionPerformed
 
     private void SimpanButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SimpanButtonActionPerformed
         // TODO add your handling code here:
+       if(lokasiKampung.getText().equals(""))lokasiKampung.setText("-");
+       if(luasKampung.getText().equals(""))luasKampung.setText("0");
+       
+        isiData(lokasiKampung.getText(), Integer.parseInt(luasKampung.getText()));
+         tampilData();
+         resetInputan();
     }//GEN-LAST:event_SimpanButtonActionPerformed
 
     private void lokasiKampungActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_lokasiKampungActionPerformed
         // TODO add your handling code here:
+//        lokasiBTS.setText(null);
     }//GEN-LAST:event_lokasiKampungActionPerformed
 
     private void luasKampungActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_luasKampungActionPerformed
         // TODO add your handling code here:
+//        luasKampung.setText(null);
     }//GEN-LAST:event_luasKampungActionPerformed
 
     private void lokasiBTSActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_lokasiBTSActionPerformed
         // TODO add your handling code here:
+        lokasiBTS.setText(null);
     }//GEN-LAST:event_lokasiBTSActionPerformed
 
     private void jarakActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jarakActionPerformed
         // TODO add your handling code here:
+        jarak.setText(null);
     }//GEN-LAST:event_jarakActionPerformed
 
     /**
