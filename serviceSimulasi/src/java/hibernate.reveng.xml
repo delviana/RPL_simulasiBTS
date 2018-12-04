@@ -41,7 +41,6 @@ Contributor(s):
 -->
 <hibernate-reverse-engineering>
   <schema-selection match-catalog="db165314063"/>
-  <table-filter match-name="LokasiKampung"/>
   <table-filter match-name="JaringanEKS"/>
-  <table-filter match-name="user"/>
+  <table-filter match-name="LokasiDesa"/>
 </hibernate-reverse-engineering>

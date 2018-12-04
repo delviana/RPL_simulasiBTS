@@ -1,5 +1,5 @@
 package pojos;
-// Generated Dec 4, 2018 9:17:33 AM by Hibernate Tools 4.3.1
+// Generated Dec 4, 2018 1:06:35 PM by Hibernate Tools 4.3.1
 
 
 
@@ -9,61 +9,52 @@ package pojos;
 public class JaringanEks  implements java.io.Serializable {
 
 
-     private String idEksisting;
-     private Double coverageArea;
-     private String namaBts;
-     private Integer jumlahBts;
-     private Double kekuatanSinyal;
+     private String idjaringan;
+     private String lat;
+     private String long_;
+     private String powerSinyal;
 
     public JaringanEks() {
     }
 
 	
-    public JaringanEks(String idEksisting) {
-        this.idEksisting = idEksisting;
+    public JaringanEks(String idjaringan) {
+        this.idjaringan = idjaringan;
     }
-    public JaringanEks(String idEksisting, Double coverageArea, String namaBts, Integer jumlahBts, Double kekuatanSinyal) {
-       this.idEksisting = idEksisting;
-       this.coverageArea = coverageArea;
-       this.namaBts = namaBts;
-       this.jumlahBts = jumlahBts;
-       this.kekuatanSinyal = kekuatanSinyal;
+    public JaringanEks(String idjaringan, String lat, String long_, String powerSinyal) {
+       this.idjaringan = idjaringan;
+       this.lat = lat;
+       this.long_ = long_;
+       this.powerSinyal = powerSinyal;
     }
    
-    public String getIdEksisting() {
-        return this.idEksisting;
+    public String getIdjaringan() {
+        return this.idjaringan;
     }
     
-    public void setIdEksisting(String idEksisting) {
-        this.idEksisting = idEksisting;
+    public void setIdjaringan(String idjaringan) {
+        this.idjaringan = idjaringan;
     }
-    public Double getCoverageArea() {
-        return this.coverageArea;
-    }
-    
-    public void setCoverageArea(Double coverageArea) {
-        this.coverageArea = coverageArea;
-    }
-    public String getNamaBts() {
-        return this.namaBts;
+    public String getLat() {
+        return this.lat;
     }
     
-    public void setNamaBts(String namaBts) {
-        this.namaBts = namaBts;
+    public void setLat(String lat) {
+        this.lat = lat;
     }
-    public Integer getJumlahBts() {
-        return this.jumlahBts;
-    }
-    
-    public void setJumlahBts(Integer jumlahBts) {
-        this.jumlahBts = jumlahBts;
-    }
-    public Double getKekuatanSinyal() {
-        return this.kekuatanSinyal;
+    public String getLong_() {
+        return this.long_;
     }
     
-    public void setKekuatanSinyal(Double kekuatanSinyal) {
-        this.kekuatanSinyal = kekuatanSinyal;
+    public void setLong_(String long_) {
+        this.long_ = long_;
+    }
+    public String getPowerSinyal() {
+        return this.powerSinyal;
+    }
+    
+    public void setPowerSinyal(String powerSinyal) {
+        this.powerSinyal = powerSinyal;
     }
 
 
