@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Dec 4, 2018 9:17:34 AM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="pojos.JaringanEks" table="JaringanEKS" catalog="db165314063" optimistic-lock="version">
+        <id name="idEksisting" type="string">
+            <column name="idEksisting" length="20" />
+            <generator class="assigned" />
+        </id>
+        <property name="coverageArea" type="java.lang.Double">
+            <column name="CoverageArea" precision="3" />
+        </property>
+        <property name="namaBts" type="string">
+            <column name="namaBTS" length="20" />
+        </property>
+        <property name="jumlahBts" type="java.lang.Integer">
+            <column name="jumlahBTS" />
+        </property>
+        <property name="kekuatanSinyal" type="java.lang.Double">
+            <column name="kekuatanSinyal" precision="3" />
+        </property>
+    </class>
+</hibernate-mapping>
