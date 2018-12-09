@@ -40,7 +40,7 @@ public class jaringanEksHelper {
         List<JaringanEks> list = null;
         Session session = NewHibernateUtil.getSessionFactory().openSession();
         Transaction tx = session.beginTransaction();
-        Query q = session.createQuery("from JaringanEksisting p");
+        Query q = session.createQuery("from JaringanEks");
         list = q.list();
         tx.commit();
         session.close();

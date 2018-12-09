@@ -10,6 +10,7 @@ import java.util.List;
 import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
+import pojos.User;
 import util.NewHibernateUtil;
 
 /**
@@ -62,7 +63,7 @@ public class userHelper {
     }
 
     public static String toJson() {
-        UserHelper helper = new UserHelper();
+        userHelper helper = new userHelper();
         List<User> list = helper.getAllUser();
         String result = "[";
         for (int i = 0; i < list.size(); i++) {

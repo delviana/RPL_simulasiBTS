@@ -7,6 +7,7 @@ package service;
 
 import com.google.gson.Gson;
 import helper.jaringanEksHelper;
+import java.util.List;
 import javax.ws.rs.core.Context;
 import javax.ws.rs.core.UriInfo;
 import javax.ws.rs.Produces;
@@ -40,25 +41,18 @@ public class JaringanEksResource {
      * Retrieves representation of an instance of service.JaringanEksResource
      * @return an instance of java.lang.String
      */
-    @GET
-     @Produces(javax.ws.rs.core.MediaType.APPLICATION_JSON)
+    
+   @GET   
+    @Produces(javax.ws.rs.core.MediaType.APPLICATION_JSON)
     public Response getJson() {
         //TODO return proper representation object
-        jaringanEksHelper p = new jaringanEksHelper();
+        jaringanEksHelper test = new jaringanEksHelper();
+        List<JaringanEks> list = test.bacaSemuaDataJaringanEks();
         Gson gson = new Gson();
-        return Response.status(Response.Status.OK)
-                .entity(gson.toJson(p.bacaSemuaDataJaringanEks()))
-                .header("Access-Control-Allow-Origin", "*")
-                .header("Access-Control-Allow-Methods",
-                        "GET,POST,HEAD,OPTIONS,PUT")
-                .header("Access-Control-Allow-Headers",
-                        "Content-Type,X-Requested-With,accept,Origin,Access-Control-Request-Method,Access-Control-Request-Headers")
-                .header("Access-Exposed-Headers",
-                        "Access-Control-Allow-Origin,Access-Control-Allow-Credentials")
-                .header("Access-Support-Credentials",
-                        "true")
-                .header("Access-Control-Max-Age", "20")
-                .header("Access-Preflight-Maxage", "20")
+        String json = gson.toJson(list);
+        return Response
+                .status(200)
+                .entity(json)
                 .build();
     }
 

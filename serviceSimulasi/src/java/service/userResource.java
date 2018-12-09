@@ -18,13 +18,14 @@ import javax.ws.rs.Path;
 import javax.ws.rs.PUT;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
+import pojos.User;
 
 /**
  * REST Web Service
  *
  * @author Acer
  */
-@Path("user")
+@Path("User")
 public class userResource {
 
     @Context
