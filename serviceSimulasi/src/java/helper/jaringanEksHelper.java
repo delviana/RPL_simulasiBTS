@@ -5,7 +5,6 @@
  */
 package helper;
 
-
 import java.util.List;
 import org.hibernate.Query;
 import org.hibernate.Session;
@@ -18,29 +17,26 @@ import util.NewHibernateUtil;
  * @author Acer
  */
 public class jaringanEksHelper {
-   
 
-     public jaringanEksHelper() {
+    public jaringanEksHelper() {
 
     }
-     
 
-  public void addNewDataJaringanEksisting(
-     String CoverageArea,
-     String namaBTS,
-     String jumlahBTS,
-     String kekuatanSinyal
-         
-          
-  ){
-         Session session = NewHibernateUtil.getSessionFactory().openSession();
-           Transaction tx = session.beginTransaction();
-           JaringanEks datajaringanEks=new JaringanEks(CoverageArea, namaBTS, jumlahBTS, kekuatanSinyal);
-           session.saveOrUpdate(datajaringanEks);
-           tx.commit();
-           session.close();
-  }
-  public List<JaringanEks> bacaSemuaDataJaringanEks() {
+    public void addNewDataJaringanEksisting(
+            String idjaringan,
+            String lat,
+            String long_,
+            String powerSinyal
+    ) {
+        Session session = NewHibernateUtil.getSessionFactory().openSession();
+        Transaction tx = session.beginTransaction();
+        JaringanEks datajaringanEks = new JaringanEks(idjaringan, lat, long_, powerSinyal);
+        session.saveOrUpdate(datajaringanEks);
+        tx.commit();
+        session.close();
+    }
+
+    public List<JaringanEks> bacaSemuaDataJaringanEks() {
         List<JaringanEks> list = null;
         Session session = NewHibernateUtil.getSessionFactory().openSession();
         Transaction tx = session.beginTransaction();
@@ -50,9 +46,9 @@ public class jaringanEksHelper {
         session.close();
         return list;
 
-        
     }
-  public void updateDataDarah(){
-      
-  } 
+
+    public void updateDataDarah() {
+
+    }
 }
