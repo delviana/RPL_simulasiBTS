@@ -83,46 +83,62 @@
                         </div>
                     </div>
                 </div>	
+                <script type="text/javascript">
+                    function tambah() {
+                        var num1 = document.myform.angka1.value;
+                        var num2 = document.myform.angka2.value;
+                        var num3 = document.myform.angka3.value;
+                        var num4 = document.myform.angka4.value;
+                        var num5 = document.myform.angka5.value;
+                        var pertambahan = ((parseInt(num3) - parseInt(num1)) + (parseInt(num4) - parseInt(num2)) * 30.416);
+                        document.getElementById('add').value = pertambahan;
+                    }
 
-                <form  onsubmit="return make_json(this)" method="POST">
-                    <div class="form-group">
-                        <label><h5>ID : </h5></label>
-                        <input type="text" class="form-control" name="idKlinik" placeholder="Masukan ID dari JRT">        
+                    function kurang() {
+                        var num1 = document.myform.angka1.value;
+                        var num2 = document.myform.angka2.value;
+                        var num3 = document.myform.angka3.value;
+                        var num4 = document.myform.angka4.value;
+                        var num5 = document.myform.angka5.value;
+                        var pengurangan = (parseInt(num5) - ((parseInt(num3) - parseInt(num1)) + (parseInt(num4) - parseInt(num2)) * 30.416) / 100 * 10);
+                        document.getElementById('add').value = pengurangan;
+                    }
 
-                        <div class="form-group"> 
-                            <label><h5>Longitude :</h5></label>
-                            <input type="text" class="form-control" name="nama" placeholder="Masukan Longitude dariArea">
-                        </div>
-                        <div class="form-group"> 
-                            <label><h5>Latitude :</h5></label>
-                            <input type="text" class="form-control" name="spesialis" placeholder="Masukan Latitude dari Area">
-                        </div>
-                        <div class="form-group"> 
-                            <label><h5>Power :</h5></label>
-                            <input type="text" class="form-control" name="spesialis" placeholder="Masukan Power dari JRT">
-                        </div>
-                        <br></br>
-                        <center><button type="submit" class="btn btn-outline-primary">Simpan</button></center>
-                    </div>
-                </form>
-                <pre id="output">
-                </pre>
+                    function bagi() {
+                        var num1 = document.myform.angka1.value;
+                        var num2 = document.myform.angka2.value;
+                        var pembagian = parseInt(num1) / parseInt(num2);
+                        document.getElementById('add').value = pembagian;
+                    }
 
-
-
-
-
-
-
+<!-- Memasukan rumus -->
 
 
+                </script>
 
 
+                <!-- Menginput -->
 
-
-
-
-
+                <FORM NAME="myform">
+                    <h1><b><center>KALKULATOR</center></b></h1><center><table border = "1">
+                            <br></br>
+                            Longitude BTS = <input type="text" name = "angka1">
+                            <br></br>
+                            Latitude BTS  = <input type="text" name = "angka2">
+                            <br></br>
+                            Longitude Desa= <input type="text" name = "angka3">
+                            <br></br>
+                            Latitude Desa = <input type="text" name = "angka4">
+                            <br></br>
+                            Power         = <input type="text" name = "angka5">
+                            <br></br>
+                            Hasilnya     = <input type = "text" id = "add" name = "hasil" value= "">
+                            <br></br>     
+                            <INPUT TYPE="button" NAME="tambah1" Value="+" onClick="tambah()"/>
+                            <INPUT TYPE="button" NAME="kurang1" Value="-" onClick="kurang()"/>
+                            <INPUT TYPE="button" NAME="kali1" Value="*" onClick="kali()"/>
+                            <INPUT TYPE="button" NAME="bagi1" Value="/" onClick="bagi()"/></table></center>
+                </FORM>
             </div>																		
 
         </div>
